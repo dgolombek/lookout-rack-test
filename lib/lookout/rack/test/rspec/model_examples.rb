@@ -1,6 +1,6 @@
 require 'rspec'
 
-module Lookout::Rack::Test
+module Lookout::Rack::Test::RSpec
   module Models
     shared_examples 'a timestamped model' do
       it { should respond_to :id }

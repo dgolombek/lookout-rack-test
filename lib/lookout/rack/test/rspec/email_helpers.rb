@@ -2,7 +2,7 @@ require 'rspec'
 require 'set'
 require 'mercury-messages'
 
-module Lookout::Rack::Test
+module Lookout::Rack::Test::RSpec
   module Emails
     def expect_emails(expected_email_names)
       email_names = []

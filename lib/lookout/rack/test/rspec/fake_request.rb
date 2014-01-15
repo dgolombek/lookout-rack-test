@@ -1,7 +1,7 @@
 require 'rspec'
 
-module Lookout::Rack::Test
-  class FakeRequestClass
+module Lookout::Rack::Test::RSpec
+  class FakeRequest
     attr_accessor :session, :env, :request
     
     def initialize
