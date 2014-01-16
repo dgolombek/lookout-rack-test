@@ -20,6 +20,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
+  spec.add_development_dependency "sinatra"
 
   # Required for {{token}} substitutions in Cucumber API scenarios
   spec.add_dependency 'liquid'
@@ -38,4 +39,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'sauce-connect'
   spec.add_dependency 'sauce', '~> 3.0'
   spec.add_dependency 'sauce-cucumber', '~> 3.0'
+
+  spec.add_dependency 'mercury-messages'
 end

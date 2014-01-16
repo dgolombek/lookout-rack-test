@@ -39,8 +39,10 @@ module Lookout
   
         def configure_rspec
           ::RSpec.configure do |c|
-            c.before(:each, :timefreeze => true) do
-              ::Timecop.freeze
+            c.around(:each, :timefreeze => true) do |example|
+              ::Timecop.freeze do
+                example.run
+              end
             end
           end
         end

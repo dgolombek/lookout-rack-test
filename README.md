@@ -22,10 +22,27 @@ Or install it yourself as:
 modules, `RSpec`, `Cucumber`, and `Rake`.
 
 ### RSpec
-See examples in `spec/`, which run against a simple Sinatra app in `example/`
+See examples in `spec/`.  `Lookout::Rack::Test::RSpec::FakeRequest` may also be
+helpful, if you want to test helper modules that are intended to be mixed into a
+route environment.
+
+```ruby
+  module Lookout::Rack::Test::RSpec
+    class FakeRequest
+      # Reopen the class to add a helper
+      include My::Helper
+    end
+  end
+
+  describe My::Helper do
+    let(:helper) { Lookout::Rack::Test::RSpec::FakeRequest.new }
+
+    # ... etc
+  end
+```
 
 ### Cucumber
-See examples in `features/`, which run against a simple Sinatra app in `example/`
+See examples in `features/`.
 
 ### Rake tasks
   `require 'lookout/rack/test/rake' in your Rakefile to pick up the RSpec and
