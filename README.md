@@ -1,6 +1,6 @@
 # Lookout::Rack::Test
 
-TODO: Write a gem description
+RSpec and Cucumber test helpers.
 
 ## Installation
 
@@ -18,7 +18,31 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+`Lookout::Rack::Test` is intended to be consumed in pieces; it falls into three
+modules, `RSpec`, `Cucumber`, and `Rake`.
+
+### RSpec
+See examples in `spec/`, which run against a simple Sinatra app in `example/`
+
+### Cucumber
+See examples in `features/`, which run against a simple Sinatra app in `example/`
+
+### Rake tasks
+  `require 'lookout/rack/test/rake' in your Rakefile to pick up the RSpec and
+Cucumber test tasks, namespaced under `:spec` and `:cucumber` respectively.
+
+Note that the `:cucumber` tasks require a `cucumber.yml`, e.g.: 
+
+```yml
+<%
+standard = "--expand -r features --format pretty --format junit --out features/reports"
+browser_opts = "--tags @selenium"
+%>
+
+default: <%= standard %> <%= browser_opts %> --tags ~@wip --tags ~@api
+wip: <%= standard %> --tags @wip
+api: <%= standard %> --tags @api --tags ~@wip
+```
 
 ## Contributing
 
