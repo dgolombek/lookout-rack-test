@@ -20,4 +20,22 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
+
+  # Required for {{token}} substitutions in Cucumber API scenarios
+  spec.add_dependency 'liquid'
+  spec.add_dependency 'rspec', '~> 2.12'
+  spec.add_dependency 'ci_reporter'
+  spec.add_dependency 'nokogiri'
+  spec.add_dependency 'rack-test'
+  # For freezing time inside of tests
+  spec.add_dependency 'timecop'
+  # Used to assist with scaffolded data and generating random data
+  spec.add_dependency 'factory_girl'
+  spec.add_dependency 'cucumber'
+
+  spec.add_dependency 'capybara', '~> 2.x'
+  spec.add_dependency 'selenium-webdriver', '<= 2.35.1'
+  spec.add_dependency 'sauce-connect'
+  spec.add_dependency 'sauce', '~> 3.0'
+  spec.add_dependency 'sauce-cucumber', '~> 3.0'
 end
