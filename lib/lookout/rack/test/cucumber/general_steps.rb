@@ -19,11 +19,6 @@ When /^I (DELETE|POST) to "(.*?)" with the JSON:$/ do |verb, url, body|
   send(verb, render_string(url), render_string(body))
 end
 
-When /^I POST to "(.*?)" with the param "(.*?)" containing:$/ do |url, param, body|
-  options = {param => body}
-  post(render_string(url), options)
-end
-
 Then /^the response (should be|is) (\d+)$/ do |verb, code|
   expect(last_response.status).to eq(code), "expected #{code} got #{last_response.status} \n\n #{last_response.body}
 "

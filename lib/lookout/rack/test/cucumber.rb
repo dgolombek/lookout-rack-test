@@ -2,8 +2,11 @@ require 'rack/test'
 require 'cucumber'
 require 'liquid'
 
-require 'lookout/rack/test/cucumber/server' if $application_class
+require 'lookout/rack/test/cucumber/transforms'
 require 'lookout/rack/test/cucumber/general_steps'
+require 'lookout/rack/test/cucumber/before'
+
+require 'lookout/rack/test/cucumber/server' if $application_class
 
 module Lookout::Rack::Test
   module Cucumber
