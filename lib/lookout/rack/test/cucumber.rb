@@ -2,6 +2,7 @@ require 'rack/test'
 require 'cucumber'
 require 'liquid'
 
+require 'lookout/rack/test'
 require 'lookout/rack/test/cucumber/transforms'
 require 'lookout/rack/test/cucumber/general_steps'
 require 'lookout/rack/test/cucumber/before'

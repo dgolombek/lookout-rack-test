@@ -2,6 +2,12 @@ require 'rspec'
 require 'rack/test'
 require 'timecop'
 
+require 'lookout/rack/test'
+module Lookout::Rack::Test
+  module RSpec
+  end
+end
+
 require 'lookout/rack/test/rspec/email_helpers'
 require 'lookout/rack/test/rspec/fake_request'
 require 'lookout/rack/test/rspec/model_examples'

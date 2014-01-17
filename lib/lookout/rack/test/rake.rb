@@ -1,3 +1,5 @@
+require 'lookout/rack/test'
+
 module Lookout::Rack::Test
   module Rake
   end
