@@ -35,7 +35,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'cucumber'
 
   spec.add_dependency 'capybara', '~> 2.x'
-  spec.add_dependency 'selenium-webdriver', '<= 2.35.1'
   spec.add_dependency 'sauce-connect'
   spec.add_dependency 'sauce', '~> 3.0'
   spec.add_dependency 'sauce-cucumber', '~> 3.0'
