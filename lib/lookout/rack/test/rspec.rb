@@ -38,7 +38,7 @@ module Lookout
             c.include(::Rack::Test::Methods, :type => :route)
   
             require 'lookout/rack/test/rspec/route_helper'
-            $application_class = application
+            ::Lookout::Rack::Test.app = application
             c.include(::RouteHelper, :type => :route)
           end
         end

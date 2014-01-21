@@ -7,10 +7,12 @@ require 'lookout/rack/test/cucumber/transforms'
 require 'lookout/rack/test/cucumber/general_steps'
 require 'lookout/rack/test/cucumber/before'
 
-require 'lookout/rack/test/cucumber/server' if $application_class
+require 'lookout/rack/test/cucumber/server'
 
 module Lookout::Rack::Test
   module Cucumber
+    include Lookout::Rack::Test::Cucumber::Server
+
     def render_string(buffer, opts={})
       ::Liquid::Template.parse(buffer).render(template_vars.merge(opts))
     end
@@ -21,10 +23,6 @@ module Lookout::Rack::Test
 
     def current_locale
       I18n.locale = ENV['CUCUMBER_LOCALE'] || 'en'
-    end
-
-    def app
-      @app ||= $application_class.new if $application_class
     end
   end
 end

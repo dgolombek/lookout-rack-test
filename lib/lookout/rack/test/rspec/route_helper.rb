@@ -1,7 +1,12 @@
+require 'lookout/rack/test'
+
 module Lookout::Rack::Test::RSpec
     module RouteHelper
       def app
-        @app ||= $application_class.new if $application_class
+        return @app if @app
+
+        klass = ::Lookout::Rack::Test.app || $application_class
+        @app = klass.new
       end
     end
 end

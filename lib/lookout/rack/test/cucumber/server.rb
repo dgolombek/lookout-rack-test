@@ -1,9 +1,13 @@
 require 'rack/test'
+require 'lookout/rack/test'
 
 module Lookout::Rack::Test::Cucumber
   module Server
     def app
-      @app ||= $application_class.new if $application_class
+      return @app if @app
+
+      klass = ::Lookout::Rack::Test.app || $application_class
+      @app = klass.new if klass
     end
   end
 end
