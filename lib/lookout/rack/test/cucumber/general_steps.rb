@@ -3,7 +3,7 @@ When /^I (GET|PUT|POST|DELETE)( to)? "(.*?)"$/ do |verb, unused, url_path|
   send(verb, render_string(url_path))
 end
 
-When /^I (GET|POST|PUT)( to)? "([^"]*)" with:$/ do |verb, unused, url, params|
+When /^I (GET|PUT|POST|DELETE)( to)? "([^"]*)" with:$/ do |verb, unused, url, params|
   options = {}
 
   params.hashes.each do |row|
@@ -14,7 +14,7 @@ When /^I (GET|POST|PUT)( to)? "([^"]*)" with:$/ do |verb, unused, url, params|
   send(verb, render_string(url), options)
 end
 
-When /^I (DELETE|POST) to "(.*?)" with the JSON:$/ do |verb, url, body|
+When /^I (GET|PUT|POST|DELETE) to "(.*?)" with the JSON:$/ do |verb, url, body|
   verb = verb.downcase.to_sym
   send(verb, render_string(url), render_string(body))
 end
