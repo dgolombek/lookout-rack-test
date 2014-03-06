@@ -1,9 +1,9 @@
-When /^I (GET|PUT|POST|DELETE)( to)? "(.*?)"$/ do |verb, unused, url_path|
+When /^I (GET|PUT|POST|PATCH|DELETE)( to)? "(.*?)"$/ do |verb, unused, url_path|
   verb = verb.downcase.to_sym
   send(verb, render_string(url_path))
 end
 
-When /^I (GET|PUT|POST|DELETE)( to)? "([^"]*)" with:$/ do |verb, unused, url, params|
+When /^I (GET|PUT|POST|PATCH|DELETE)( to)? "([^"]*)" with:$/ do |verb, unused, url, params|
   options = {}
 
   params.hashes.each do |row|
@@ -14,7 +14,7 @@ When /^I (GET|PUT|POST|DELETE)( to)? "([^"]*)" with:$/ do |verb, unused, url, pa
   send(verb, render_string(url), options)
 end
 
-When /^I (GET|PUT|POST|DELETE) to "(.*?)" with the JSON:$/ do |verb, url, body|
+When /^I (GET|PUT|POST|PATCH|DELETE) to "(.*?)" with the JSON:$/ do |verb, url, body|
   verb = verb.downcase.to_sym
   send(verb, render_string(url), render_string(body))
 end
@@ -39,4 +39,4 @@ Then /^I should receive the JSON:$/ do |json|
   end
 
   expect(received).to eql(expected)
-end                                                        
+end
