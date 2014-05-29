@@ -2,7 +2,7 @@ require 'cucumber/rake/task'
 require 'ci/reporter/rake/cucumber'
 
 # parallel_tests is somewhat pointless/nonfunctional on JRuby
-unless RUBY_VERSION == 'java'
+unless RUBY_PLATFORM == 'java'
   require 'parallel_tests/tasks'
 end
 
