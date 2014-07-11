@@ -2,6 +2,7 @@ require 'rspec/core/rake_task'
 require 'ci/reporter/rake/rspec'
 
 RSpec::Core::RakeTask.new(:spec) do |r|
+  r.rspec_opts = '--color --order random'
 end
 
 
