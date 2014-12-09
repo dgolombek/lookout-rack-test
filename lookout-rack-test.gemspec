@@ -26,6 +26,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'liquid'
   spec.add_dependency 'rspec', '~> 2.12'
   spec.add_dependency 'ci_reporter'
+  spec.add_dependency 'ci_reporter_cucumber'
+  spec.add_dependency 'ci_reporter_rspec'
   spec.add_dependency 'nokogiri'
   spec.add_dependency 'rack-test'
   # For freezing time inside of tests
