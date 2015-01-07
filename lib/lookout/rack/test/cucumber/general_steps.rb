@@ -16,6 +16,8 @@ end
 
 When /^I (GET|PUT|POST|PATCH|DELETE) to "(.*?)" with the JSON:$/ do |verb, url, body|
   verb = verb.downcase.to_sym
+  header 'Accept', 'application/json'
+  header 'Content-Type', 'application/json'
   send(verb, render_string(url), render_string(body))
 end
 
