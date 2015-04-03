@@ -37,5 +37,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'cucumber'
   spec.add_dependency 'parallel_tests'
 
-  spec.add_dependency 'capybara', '~> 2.x'
+  spec.add_dependency 'capybara', '~> 2.2'
 end
