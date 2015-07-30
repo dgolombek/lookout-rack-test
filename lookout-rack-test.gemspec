@@ -28,7 +28,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'ci_reporter'
   spec.add_dependency 'ci_reporter_cucumber'
   spec.add_dependency 'ci_reporter_rspec'
-  spec.add_dependency 'nokogiri'
   spec.add_dependency 'rack-test'
   # For freezing time inside of tests
   spec.add_dependency 'timecop'
@@ -36,6 +35,4 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'factory_girl'
   spec.add_dependency 'cucumber'
   spec.add_dependency 'parallel_tests'
-
-  spec.add_dependency 'capybara', '~> 2.2'
 end
