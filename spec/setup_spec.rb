@@ -22,13 +22,13 @@ end
 describe ':speed => :slow' do
   context 'a test marked as :speed => :slow', :speed => :slow do
     it 'should have called .setup on the Models module' do
-      expect(TestModels.was_setup?).to be_true
+      expect(TestModels.was_setup?).to be true
     end
   end
 
   context 'a test not marked as :speed => :slow' do
     it 'should not have called .setup on the Models module' do
-      expect(TestModels.was_setup?).to be_false
+      expect(TestModels.was_setup?).to be false
     end
   end
 end

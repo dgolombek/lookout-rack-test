@@ -18,13 +18,13 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler", "~> 1.3"
+  spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "sinatra"
 
   # Required for {{token}} substitutions in Cucumber API scenarios
   spec.add_dependency 'liquid'
-  spec.add_dependency 'rspec', '~> 2.12'
+  spec.add_dependency 'rspec'
   spec.add_dependency 'ci_reporter'
   spec.add_dependency 'ci_reporter_cucumber'
   spec.add_dependency 'ci_reporter_rspec'
