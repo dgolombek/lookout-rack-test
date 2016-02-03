@@ -52,5 +52,3 @@ When /^I (PUT|POST) a file to "(.*?)"$/ do |verb, url|
   verb = verb.downcase.to_sym
   send(verb, render_string(url), "some file", template_vars['headers'] || {})
 end
-
-

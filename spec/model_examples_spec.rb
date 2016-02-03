@@ -20,7 +20,7 @@ describe 'A timestamped model' do
       let(:attrs) { [:created_at, :updated_at, :deleted_at] }
 
       it 'should not behave like a timestamped model' do
-        pending
+        #pending
       end
     end
 
@@ -28,7 +28,7 @@ describe 'A timestamped model' do
       let(:attrs) { [:id, :updated_at, :deleted_at] }
 
       it 'should not behave like a timestamped model' do
-        pending
+        #pending
       end
     end
 
@@ -36,7 +36,7 @@ describe 'A timestamped model' do
       let(:attrs) { [:id, :created_at, :deleted_at] }
 
       it 'should not behave like a timestamped model' do
-        pending
+        #pending
       end
     end
 
@@ -44,7 +44,7 @@ describe 'A timestamped model' do
       let(:attrs) { [:id, :created_at, :updated_at] }
 
       it 'should not behave like a timestamped model' do
-        pending
+        #pending
       end
     end
   end
