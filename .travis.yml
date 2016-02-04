@@ -4,4 +4,8 @@ rvm:
 - 1.9.3
 - jruby
 before_install:
-  - gem install bundler
+- gem install bundler
+deploy:
+  provider: rubygems
+  api_key:
+    secure: NYRm2JAJY5zSehxYUDioKYidvU7QaGw0BtFqxo4wzdvQite7ZLOW4dtBiKv5kdFcpkUQhnrD2ilGkt3XhImqt4T20MA12JgZBZa17/vZHXN2bAkxkubx9Sqo7G4Rcip+x2vLZNlcJnaU76+91zBEyp9ts4jvljriANbUn4eFmuE=
