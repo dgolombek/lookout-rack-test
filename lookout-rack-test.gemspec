@@ -34,5 +34,4 @@ Gem::Specification.new do |spec|
   # Used to assist with scaffolded data and generating random data
   spec.add_dependency 'factory_girl'
   spec.add_dependency 'cucumber'
-  spec.add_dependency 'parallel_tests'
 end
