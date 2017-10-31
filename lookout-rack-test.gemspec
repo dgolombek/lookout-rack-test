@@ -25,7 +25,6 @@ Gem::Specification.new do |spec|
   # Required for {{token}} substitutions in Cucumber API scenarios
   spec.add_dependency 'liquid'
   spec.add_dependency 'rspec'
-  spec.add_dependency 'ci_reporter'
   spec.add_dependency 'ci_reporter_cucumber'
   spec.add_dependency 'ci_reporter_rspec'
   spec.add_dependency 'rack-test'
