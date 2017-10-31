@@ -32,6 +32,6 @@ Gem::Specification.new do |spec|
   # For freezing time inside of tests
   spec.add_dependency 'timecop'
   # Used to assist with scaffolded data and generating random data
-  spec.add_dependency 'factory_girl'
+  spec.add_dependency 'factory_bot'
   spec.add_dependency 'cucumber'
 end

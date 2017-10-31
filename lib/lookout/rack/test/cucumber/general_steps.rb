@@ -16,10 +16,20 @@ When /^I (GET|PUT|POST|PATCH|DELETE)( to)? "([^"]*)" with:$/ do |verb, unused, u
   send(verb, render_string(url), options, headers)
 end
 
-When /^I (GET|PUT|POST|PATCH|DELETE) to "(.*?)" with the JSON:$/ do |verb, url, body|
+When /^I (GET|PUT|POST|PATCH) to "(.*?)" with the JSON:$/ do |verb, url, body|
   verb = verb.downcase.to_sym
   headers = template_vars['headers'] || {}
   send(verb, render_string(url), render_string(body), headers)
+end
+
+When /^I DELETE to "(.*?)" with the JSON:$/ do |url, body|
+  # Rack::Test lost the ability to provide a body for delete
+  # requests. Until https://github.com/rack-test/rack-test/issues/200
+  # is resolved, work around this
+  env = {:method => :delete,
+         :input => render_string(body),
+        }.merge(template_vars['headers'] || {})
+  request render_string(url), env
 end
 
 Then /^the response (should be|is) (\d+)$/ do |verb, code|

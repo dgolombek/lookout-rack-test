@@ -24,11 +24,25 @@ describe ':speed => :slow' do
     it 'should have called .setup on the Models module' do
       expect(TestModels.was_setup?).to be true
     end
+
+    it 'loads factories' do
+      expect(FactoryBot.build(:fake_request)).not_to be_nil
+    end
   end
 
   context 'a test not marked as :speed => :slow' do
+    before do
+      # Unload factories in case they were loaded in 'loads factories' spec above.
+      FactoryBot.reset_configuration
+      FactoryBot.register_default_strategies
+    end
+
     it 'should not have called .setup on the Models module' do
       expect(TestModels.was_setup?).to be false
+    end
+
+    it 'does not load factories' do
+      expect { FactoryBot.build(:fake_request) }.to raise_error(/Factory not registered/)
     end
   end
 end
